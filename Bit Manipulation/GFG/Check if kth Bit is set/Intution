@@ -1,0 +1,21 @@
+We want to check the kth bit, so in order to do that we have to pass our kth bit to the answer and block all other bits. This can be done by using 
+a & 1 = a at kth bit
+and to block all other bits we do a & 0 = 0
+
+ex1->       1 0 1 1 0      let = 2 so we create a mask  0 0 1 0 0 using 1<<k
+           
+           =>  1 0 1 1 0 
+            &  0 0 1 0 0
+            ---------------
+               0 0 1 0 0
+               
+               as our ans is > 0 thus our kth bit is set 
+               
+ex2->           1 0 1 1 0      let = 3 so we create a mask  0 1 0 0 0 using 1<<k
+           
+           =>  1 0 1 1 0 
+            &  0 1 0 0 0
+            ---------------
+               0 0 0 0 0
+               
+               as our ans is not > 0 thus our kth bit is not set 
