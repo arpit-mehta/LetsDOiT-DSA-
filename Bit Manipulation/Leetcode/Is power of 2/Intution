@@ -1,0 +1,36 @@
+method 1:- Keep dividing by 2 unless you hit a odd number 
+            if this odd number is equal to 1 then N is power of 2
+            
+            O(logn) //because each time number is getting halved
+            
+Method 2:- counting set bits
+           if set bits is equal to 1 then number is definitely a power of 2 
+           loop log(n)+1 times in order to traverse all the bits and then do & 1 each time if answer=1 and increase counter
+           if counter==1 then number is power of 2 
+           
+           loop(i : 0 to logn+1)
+              if(n & (1<<i) == 1)
+                    count++;
+     
+            Power of 2 has only 1 bit as 1 that is the most significant bit.
+            
+            O(logn) //because we need to traverse each bit of the number 
+  
+  
+ Method 3:- Right shift
+            if we keep on doing right shift till we reach first 1 and the number left is also equal to 1 then that number is power of 2
+            
+            right shifting
+            1000 -> 100 -> 10 -> 1  as we are left with 1 so it is power of 2. 
+            1100 -> 110 -> 11       as we encounter 1 but the number left is not equal to 1 so not a power of 2.
+            
+            while(n>1 && (n&1)==0{      //till number >1 && n & 1 is = 0 then keep right shifting the number till we get rid of all 0's 
+                  n>>=1;
+            }
+            
+            O(logn)
+ 
+ Method 4:- Log operation
+            ceil(n) == floor(n) then number is power of 2
+            
+            O(1) solution
