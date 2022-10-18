@@ -1,0 +1,2 @@
+In binary representation last bit is responsible in deciding weather a number is even or odd because 2^0 = 1 so if it is added then number is odd
+so we do & 1 operation with our number if it is 1 that means number is odd else the number is even.
